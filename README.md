@@ -1,5 +1,7 @@
 # heading array
 
+example:
+
 ```php
 include "heading-array.php";
 $html = <<<EOD
