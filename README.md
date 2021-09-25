@@ -1,5 +1,7 @@
 # heading array
 
+Parse HTML into an array based on Heading.
+
 example:
 
 ```php

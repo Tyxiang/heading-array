@@ -1,4 +1,5 @@
 <?php
+// h1 ~ h6
 function heading_parse($html)
 {
     $raw = array();
