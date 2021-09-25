@@ -2,28 +2,33 @@
 
 Parse HTML into an array based on Heading.
 
-example:
+## usage
 
 ```php
 include "heading-array.php";
-$html = <<<EOD
+$path = "demo.html";
+$html = file_get_contents($path);
+$array = heading_parse($html);
+header('Content-type: application/json');
+echo json_encode($array, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
+```
+
+## demo.html
+
+```html
 <h1>heading-1</h1>
 h1-content
 <h2>heading-2</h2>
 h2-content
 <h2>heading-2</h2>
 h2-content
-EOD;
-$array = heading_parse($html);
-header('Content-type: application/json');
-echo json_encode($array, JSON_UNESCAPED_UNICODE | JSON_PRETTY_PRINT);
 ```
 
-output:
+## output
 
 ```json
 {
-  "others":"<h1>heading-1</h1>h1-content<h2>heading-2</h2>h2-content<h2>heading-2</h2>h2-content",
+  "others": "<h1>heading-1</h1>h1-content<h2>heading-2</h2>h2-content<h2>heading-2</h2>h2-content",
   "h1": [
     {
       "title": "heading-1",
