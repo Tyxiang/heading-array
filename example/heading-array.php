@@ -3,6 +3,7 @@ function heading_parse($html)
 {
     $raw = array();
     $array = array();
+    $array['others'] = $html;
     //$html = str_replace(array("\r\n", "\n", "\r"), '', $html);
     $raw = explode('<h1>', $html);
     for ($h1 = 0; $h1 < count($raw); $h1++) {
